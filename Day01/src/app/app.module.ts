@@ -9,7 +9,6 @@ import { ProductServiceService } from './Services/product-service.service';
 @NgModule({
   declarations: [
     AppComponent,
-    FirstComponentComponent,
     SecondComponentComponent
   ],
   imports: [
