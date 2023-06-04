@@ -1,0 +1,32 @@
+<div *ngIf="productwithCategories$ | async as products">
+  <h1>productwithCategorie Count: {{products.length}}</h1>
+  
+</div>
+
+<table class="table" style="width: 800px; text-align: center;margin:auto">
+ <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Handle</th>
+    <th scope="col">Brand</th>
+    <th scope="col">category</th>
+  </tr>
+ </thead>
+ <tbody>
+<ng-container *ngIf="productwithCategories$ | async as products">
+  <tr *ngFor="let prd of products" >
+    <td scope="row">{{prd.id}}</td>
+    <td>{{prd.title}}</td>
+    <td>{{prd.price}}</td>
+    <td>{{prd.stock}}</td>
+    <td>{{prd.brand}}</td>
+    <td>{{prd.category}}</td>
+  </tr>
+</ng-container>
+
+ </tbody>
+</table>
+
+
