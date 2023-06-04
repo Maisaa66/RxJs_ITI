@@ -1,0 +1,39 @@
+
+<div class="row d-flex justify-content-center flex-column align-items-center mt-5">
+    <div class="col-6 ">
+        <input type="text" placeholder="Enter number of product" class="form-control" [(ngModel)]="productNum"/>
+    </div>
+    <div class="col-6 d-flex">
+        <button class="btn btn-primary" (click)="enter()">Enter</button>
+    </div>
+
+</div>
+    
+    <div class="row text-center">
+        <h1>Slide Show</h1>
+    </div>
+    <!-- <div>productNum : {{productNum}}</div> -->
+    <table class="table" *ngIf="products$ | async as products">
+       
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Code</th>
+            <th scope="col">Category</th>
+            <th scope="col">Price</th>
+            <th scope="col">In Stock</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr *ngFor="let product of products.slice(0, productNum)">
+            
+            <th scope="row">{{product.title}}</th>
+            <td>{{product.id}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.stock}}</td>
+          </tr>
+
+        </tbody>
+      </table>
